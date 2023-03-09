@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  r2dbc:
+    url: r2dbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:oecy}?useUnicode=true&tlsVersion=TLSv1.2
+    username: ${DATABASE_USER:root}
+    password: ${DATABASE_PASSWORD:password}
+    pool:
+      initial-size: 1
+      max-size: 1
+      max-idle-time: 2m
