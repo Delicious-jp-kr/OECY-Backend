@@ -19,6 +19,7 @@ class SecurityConfig {
             .cors().and()
             .authorizeExchange()
             .pathMatchers(HttpMethod.GET, "/").permitAll()
+            .pathMatchers(HttpMethod.POST, "/api/v1/users/signup").permitAll()
             .anyExchange().authenticated()
         return http.build()
     }
